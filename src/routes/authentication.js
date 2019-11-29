@@ -21,8 +21,8 @@ router.get('/signin', (req, res) => {
 });
 
 router.post('/signin', (req, res, next) => {
-  req.check('username', 'Username is Required').notEmpty();
-  req.check('password', 'Password is Required').notEmpty();
+  req.check('username', 'El usuario es obligatorio').notEmpty();
+  req.check('password', 'La contraseña es obligatoria').notEmpty();
   const errors = req.validationErrors();
   if (errors.length > 0) {
     req.flash('message', errors[0].msg);
